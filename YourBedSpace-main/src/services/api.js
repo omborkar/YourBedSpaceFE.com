@@ -19,7 +19,7 @@ export const clearAuthHeader = () => {
 // Auth Endpoints
 export const register = async (data) => {
   try {
-    const response = await api.post('/auth/register', data);
+    const response = await api.post('/api/users/register', data);
     return response.data;
   } catch (error) {
     throw error.response?.data || 'Registration failed';
@@ -28,7 +28,7 @@ export const register = async (data) => {
 
 export const login = async (data) => {
   try {
-    const response = await api.post('/auth/login', data);
+    const response = await api.post('/api/users/login', data);
     setAuthHeader(data.email, data.password);
     localStorage.setItem('user', JSON.stringify({ email: data.email }));
     return response.data;
@@ -58,5 +58,14 @@ export const getAllBedSpaces = async () => {
     return response.data;
   } catch (error) {
     throw error.response?.data || 'Failed to fetch bedspaces';
+  }
+};
+
+export const getBedSpaceById = async (id) => {
+  try {
+    const response = await api.get(`/api/bedspaces/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || 'Failed to fetch bedspace details';
   }
 };

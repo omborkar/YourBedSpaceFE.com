@@ -33,11 +33,12 @@ const BedSpaces = () => {
                                 <p className="text-gray-800">Price: ${bedSpace.price}/month</p>
                                 <p className="text-gray-800">WhatsApp: {bedSpace.whatsapp}</p>
                                 <Link
-                                    to={`/create-bedspace`} // Update to actual bedspace details route if needed
+                                    to={`/bedspace/${bedSpace.id}`}
                                     className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
                                 >
                                     View Details
                                 </Link>
+
                             </div>
                         ) )
                     )}

@@ -9,6 +9,7 @@ import CreateBedSpace from './pages/CreateBedSpace';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import BedSpaceDetails from './pages/BedSpaceDetails';
 import "./App.css"
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bedspaces" element={<BedSpaces />} />
+        <Route path="/bedspace/:id" element={<BedSpaceDetails />} />
         <Route path="/create-bedspace" element={<CreateBedSpace />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
