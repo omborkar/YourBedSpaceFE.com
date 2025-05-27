@@ -19,7 +19,7 @@ const CreateBedSpace = () => {
     try {
       // Structure the data to match the required POST format
       const postData = {
-        bedOwnerId: 9,
+        bedOwnerId: 1,
         name: data.name,
         location: data.location,
         price: Number(data.price), // Ensure price is a number
